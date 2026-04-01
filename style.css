@@ -18,6 +18,7 @@ body {
     color: var(--dark-grey);
     line-height: 1.6;
     background-color: var(--white);
+    padding-bottom: 60px; /* Espacio para el botón flotante en móvil */
 }
 
 .container {
@@ -38,20 +39,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo-seal {
     border: 2px solid var(--silver);
-    padding: 10px;
+    padding: 15px;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
+    background: rgba(255,255,255,0.05);
 }
 
 nav ul {
@@ -70,78 +73,122 @@ nav ul li a {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: var(--white);
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--silver);
 }
 
 /* Servicios */
 .services {
-    padding: 60px 0;
+    padding: 80px 0;
     background-color: var(--light-grey);
 }
 
 h2 {
     text-align: center;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 40px;
-    position: relative;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
 }
 
 h2::after {
     content: '';
-    width: 50px;
-    height: 2px;
+    width: 60px;
+    height: 3px;
     background: var(--silver);
     display: block;
-    margin: 10px auto;
-}<a href="https://wa.me/5492236765288?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20necesito%20hacer%20una%20consulta." class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
-    <span>Consultar ahora</span>
-</a>
-https://wa.me/5492236765288?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20necesito%20hacer%20una%20consulta
+    margin: 15px auto;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    border-top: 4px solid var(--silver);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-top: 5px solid var(--silver);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 /* Contacto y Footer */
 .contact {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
 .contact-info {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 footer {
     background: var(--dark-grey);
     color: var(--white);
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.8rem;
-  }
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--silver);
+}
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+}
+
+/* Ajustes para Celulares */
+@media screen and (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    .logo-seal { margin: 0 auto 20px auto; }
+    nav ul { justify-content: center; width: 100%; }
+}
